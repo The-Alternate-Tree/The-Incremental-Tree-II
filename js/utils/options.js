@@ -7,7 +7,7 @@ function getStartOptions() {
 		autosave: true,
 		msDisplay: "always",
 		theme: "default",
-		hqTree: false,
+		hqTree: true,
 		offlineProd: true,
 		hideChallenges: false,
 		showStory: true,
@@ -15,6 +15,10 @@ function getStartOptions() {
 		oldStyle: false,
 		forceTooltips: true,
 		hideMilestonePopups: false,
+		newTree: true,
+		newStyle: true,
+
+
 	}
 }
 

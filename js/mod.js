@@ -1,8 +1,8 @@
 let modInfo = {
 	name: "The Incremental Tree II",
-	author: "nobody",
+	author: "liam",
 	pointsName: "points",
-	modFiles: ["prestige.js", "tree.js"],
+	modFiles: ["prestige.js", "achievements.js","tree.js"],
 
 	discordName: "",
 	discordLink: "",
@@ -13,7 +13,7 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "1.00",
-	name: "Literally nothing",
+	name: "",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -42,11 +42,22 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
-	return gain
+	if (hasUpgrade('p', 11)) gain = gain.times(2)
+	if (hasUpgrade('p', 12)) gain = gain.times(upgradeEffect('p', 12))
+	if (hasUpgrade('p', 13)) gain = gain.times(3)
+	if (hasUpgrade('p', 15)) gain = gain.times(2)
+
+		gain = gain.times(tmp.a.powerEff)
+		if (hasUpgrade('p', 21)) gain = gain.times(tmp.p.powerEff)
+
+
+exp = new Decimal(1)
+	return gain.pow(exp)
 }
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
+	
 }}
 
 // Display extra things at the top of the page

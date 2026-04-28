@@ -1,8 +1,18 @@
 // ************ Themes ************
-var themes = ["default", "aqua"]
+var themes = ["default", "aqua", "volcano", "sky"]
 
 var colors = {
 	default: {
+		1: "#ffffff",//Branch color 1
+		2: "#bfbfbf",//Branch color 2
+		3: "#7f7f7f",//Branch color 3
+		color: "#dfdfdf",
+		points: "#ffffff",
+		locked: "#bf8f8f",
+		background: "#0f0f0f",
+		background_tooltip: "rgba(0, 0, 0, 0.75)",
+	},
+	bpp: {
 		1: "#ffffff",//Branch color 1
 		2: "#bfbfbf",//Branch color 2
 		3: "#7f7f7f",//Branch color 3
@@ -22,6 +32,27 @@ var colors = {
 		background: "#001f3f",
 		background_tooltip: "rgba(0, 15, 31, 0.75)",
 	},
+	volcano: {
+		1: "#eca233",
+		2: "#ffb6b6",
+		3: "#191668",
+		color: "#ffffff",
+		points: "#fce4a5",
+		locked: "#bf8f8f",
+		background: "#e24017",
+		background_tooltip: "rgba(0, 0, 0, 0.75)",
+	},
+	sky: {
+		1: "#404040",
+		2: "#7c7c7c",
+		3: "#5f6f7f",
+		color: "#404040",
+		points: "#000000",
+		locked: "#c4a7b3",
+		background: "#87ceeb",
+		background_tooltip: "rgba(255, 255, 255, 0.25)",
+	},
+	
 }
 function changeTheme() {
 
@@ -33,7 +64,7 @@ function changeTheme() {
 	document.body.style.setProperty("--locked", colors_theme["locked"]);
 }
 function getThemeName() {
-	return options.theme? options.theme : "default";
+	return options.theme ? options.theme : "default";
 }
 
 function switchTheme() {
@@ -44,7 +75,6 @@ function switchTheme() {
 	else {
 		index ++;
 		options.theme = themes[index];
-		options.theme = themes[1];
 	}
 	changeTheme();
 	resizeCanvas();
