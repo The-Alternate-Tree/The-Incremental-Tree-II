@@ -292,3 +292,4 @@ addLayer("changelog-tab", {
     tabFormat() {return ([["raw-html", modInfo.changelog]])},
     row: "otherside"
 })
+

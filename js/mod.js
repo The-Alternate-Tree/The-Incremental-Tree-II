@@ -13,7 +13,7 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "1.00",
-	name: "",
+	name: "PR2",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -49,6 +49,8 @@ function getPointGen() {
 
 		gain = gain.times(tmp.a.powerEff)
 		if (hasUpgrade('p', 21)) gain = gain.times(tmp.p.powerEff)
+	if (hasUpgrade('p', 22)) gain = gain.times(5)
+	if (hasUpgrade('p', 23)) gain = gain.times(upgradeEffect('p', 23))
 
 
 exp = new Decimal(1)

@@ -177,7 +177,6 @@ var systemComponents = {
 			        <br><br>CONTENT SHOWN:
 
                 <td><button class="opt" onclick="adjustMSDisp()">Show Milestones: {{ MS_DISPLAYS[MS_SETTINGS.indexOf(options.msDisplay)]}}</button></td>
-                <td><button class="opt" onclick="toggleOpt('showUpgs')">Show Bought Upgrades: {{ formatOption(!options.showUpgs) }}</button></td>
                 <td><button class="opt" onclick="toggleOpt('hideChallenges')">Completed Challenges: {{ options.hideChallenges?"HIDDEN":"SHOWN" }}</button></td>
                 <td><button class="opt" onclick="toggleOpt('showAchs')">Show Complete Achievements: {{ formatOption(!options.showAchs) }}</button></td>
 				<td><button class="opt" onclick="toggleOpt('forceTooltips'); needsCanvasUpdate = true">Shift-Click to Toggle Tooltips: {{ options.forceTooltips?"ON":"OFF" }}</button></td>
@@ -193,8 +192,8 @@ var systemComponents = {
                 <td><button class="opt" onclick="toggleOpt('forceOneTab'); needsCanvasUpdate = true">Single-Tab Mode: {{ options.forceOneTab?"ALWAYS":"AUTO" }}</button></td>
 				
 			
-                <td><button class="opt" onclick="toggleOpt('newTree')">New Tree Style: {{ formatOption(!options.newTree) }}</button></td>
-                <td><button class="opt" onclick="toggleOpt('newStyle')">New Content Style: {{ formatOption(!options.newStyle) }}</button></td>
+                <td><button class="opt" onclick="toggleOpt('newTree')">Old Tree Style: {{ formatOption(!options.newTree) }}</button></td>
+                <td><button class="opt" onclick="toggleOpt('newStyle')">Old Content style: {{ formatOption(!options.newStyle) }}</button></td>
                 <td><button class="opt" onclick="toggleOpt('hqTree')">High-Quality Tree: {{ options.hqTree?"ON":"OFF" }}</button></td>
 
 				</tr>

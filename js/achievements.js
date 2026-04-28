@@ -29,7 +29,7 @@ addLayer("a", {
     "achievements"
 ],
  nodeStyle() {
-        if (!options.newTree)
+        if (options.newTree)
              return { // Style on the layer node
             
             'border-radius': '20%'

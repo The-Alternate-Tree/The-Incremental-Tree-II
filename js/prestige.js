@@ -21,6 +21,7 @@ addLayer("p", {
         mult = new Decimal(1)
         if (hasUpgrade('p', 14)) mult = mult.times(2.5)
         if (hasUpgrade('p', 15)) mult = mult.times(2)
+        if (hasUpgrade('p', 22)) mult = mult.times(2)
 
 
         return mult
@@ -44,6 +45,9 @@ addLayer("p", {
     effect() {
         let eff = new Decimal(0)
 if (hasUpgrade('p', 21)) eff = new Decimal(1)
+if (hasUpgrade('p', 22)) eff = eff.times(5)
+
+
         return eff
     },
     update(diff) {
@@ -51,15 +55,15 @@ if (hasUpgrade('p', 21)) eff = new Decimal(1)
         return player.p.power = player.p.power.plus(tmp.p.effect.times(diff))
     },
     nodeStyle() {
-        if (!options.newTree)
+        if (options.newTree)
              return { // Style on the layer node
             
             'border-radius': '20%'
         }},
         componentStyles: {
-            "upgrade"() {if (!options.newStyle)
+            "upgrade"() {if (options.newStyle)
                 return {'border-radius': '5% / 5%'}},
-            "prestige-button"() {if (!options.newStyle)
+            "prestige-button"() {if (options.newStyle)
                  return {'border-radius': '10% / 10%'}},
         },
         powerEff() {
@@ -146,6 +150,30 @@ if (hasUpgrade('p', 21)) eff = new Decimal(1)
                 return hasUpgrade('p', 15)
             },
              
+        },
+         22: {
+                title: "A Lot Of Boost",
+                description: "Gain 5x prestige power and points, and 2x prestige points.",
+                cost: new Decimal(4000),
+                unlocked() { 
+              
+                return hasUpgrade('p', 21)
+            },
+             
+        },
+        23: {
+                title: "Upgrade Power",
+                description: "Multiply point gain by prestige upgrades bought.",
+                cost: new Decimal(50000),
+                unlocked() { 
+              
+                return hasUpgrade('p', 22)
+            },
+             effect() { // Calculate bonuses from the upgrade. Can return a single value or an object with multiple values
+                    let ret = new Decimal(player.p.upgrades.length)
+                    return ret;
+                },
+                effectDisplay() { return format(this.effect())+"x" }, // Add formatting to the effect
         },
     },
 })
