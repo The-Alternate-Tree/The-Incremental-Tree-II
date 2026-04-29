@@ -67,5 +67,37 @@ achievements: {
                 return (!hasAchievement(this.layer, this.id) || !options.showAchs)
             }
         },
+        15: {
+            name: "That's A Lot Of Power",
+            done() {return player.p.power.gte(2e3)},
+            tooltip: "Get 2,000 prestige power.",
+            unlocked() {
+                return (!hasAchievement(this.layer, this.id) || !options.showAchs)
+            }
+        },
+         16: {
+            name: "Finally A New Layer",
+            done() {return player.p.points.gte(2e12)},
+            tooltip: "Get 2e12 prestige points.",
+            unlocked() {
+                return (!hasAchievement(this.layer, this.id) || !options.showAchs)
+            }
+        },
+        21: {
+            name: "A First Real Reset",
+            done() {return player.am.points.gte(1)},
+            tooltip: "Gain your first antimatter.",
+            unlocked() {
+                return (!hasAchievement(this.layer, this.id) || !options.showAchs)
+            }
+        },
+        22: {
+            name: "Antimatter Is OP",
+            done() {return player.am.points.gte(1000)},
+            tooltip: "Get 1,000 antimatter.",
+            unlocked() {
+                return (!hasAchievement(this.layer, this.id) || !options.showAchs)
+            }
+        },
     },
 })
